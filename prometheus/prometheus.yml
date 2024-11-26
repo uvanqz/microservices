@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'rpc-gateway'
+    static_configs:
+      - targets: ['rpc-gateway:8001']  # Порт для rpc-gateway
+
+  - job_name: 'static-gateway'
+    static_configs:
+      - targets: ['static-gateway:8002']  # Порт для static-gateway
+
+  - job_name: 'reverse'
+    static_configs:
+      - targets: ['reverse:8003']  # Порт для reverse сервиса
+
+  - job_name: 'cut'
+    static_configs:
+      - targets: ['cut:8004']  # Порт для cut сервиса
